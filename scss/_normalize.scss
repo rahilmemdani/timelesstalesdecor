@@ -1,0 +1,199 @@
+@import "variable";
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+html{
+    scroll-behavior: smooth;
+    font-size: 10px;
+
+    @include respond('phone') {
+        font-size: 7px;
+    }
+
+    @include respond('tab-port') {
+        font-size: 7.5px;
+    }
+
+    @include respond('small-desktop') {
+        font-size: 6px;
+    }
+
+    @include respond('regular-desktop') {
+        font-size: 6.5px;
+    }
+
+    @include respond('large-desktop') {
+        font-size: 8px;
+    }
+}
+
+body{
+    font-size: 2rem;
+    font-family: $font-family;
+    background-color: $white-color;
+
+    @include respond("phone"){
+        overflow-x: hidden;
+    }
+}
+
+.container{
+    max-width: 80% !important;
+
+    @include respond("phone"){
+        max-width: 95% !important;
+    }
+
+    @include respond("tab-port"){
+        max-width: 90% !important;
+    }
+}
+
+.container-md{
+    max-width: 70% !important;
+
+    @include respond("phone"){
+        max-width: 80% !important;
+    }
+}
+
+h1{
+    color: $black-color;
+    font-size: 5rem;
+    font-weight: 700;
+}
+
+h2{
+    color: $black-color;
+    font-size: 4rem;
+    line-height: 1.5;
+    font-weight: 500;
+    margin-bottom: 5rem;
+
+    @include respond("phone"){
+        margin-bottom: 3.5rem;
+    }
+
+    @include respond("tab-port"){
+        margin-bottom: 4.5rem;
+    }
+}
+
+h3{
+    color: $grey-color-1;
+    font-weight: 600;
+    font-size: 2.6rem;
+    margin-bottom: 7rem;
+    line-height: 1.42;
+
+    @include respond("phone"){
+        margin-bottom: 4rem;
+    }
+
+    @include respond("tab-port"){
+        margin-bottom: 5rem;
+    }
+}
+
+p{
+    color: $grey-color-3;
+    font-size: 1.8rem;
+    line-height: 2.06;
+    font-weight: 400;
+}
+
+.page-container{
+    margin-top: 9.4rem;
+}
+
+.page-header{
+    @include flexCenter();
+    background-color: rgba($primary-color, 0.04);
+    height: 14rem;
+
+    h1{
+        color: $secondary-color;
+        font-size: 4rem;
+    }
+
+    .col-lg-12{
+        @include respond("phone"){
+            padding: 0;
+        }
+    }
+}
+
+.page-body{
+    padding: 5rem 0 12rem 0;
+
+    .col-lg-12{
+        @include respond("phone"){
+            padding: 0;
+        }
+    }
+
+    ul{
+        li{
+            color:$grey-color-3;
+            font-size: 1.8rem;
+            list-style: none;
+            margin-bottom: 0.8rem;
+        }
+    }
+
+    h2{
+        margin: 5rem 0;
+        font-size: 2.8rem;
+    }
+
+    a{
+        color: $primary-color;
+        word-break: break-all;
+    }
+
+    address{
+        color:$grey-color-3;
+        font-size: 1.8rem;
+        margin-bottom: 5rem;
+        line-height: 3.2rem;
+    }
+    
+    p{
+        color:$grey-color-3;
+        font-size: 1.8rem;
+        margin-bottom: 2rem;
+    }
+
+    b{
+        font-weight: 600;
+    }
+}
+
+a{
+    &:focus{
+        outline: none;
+    }
+}
+
+.xs-none{
+    @include respond("phone"){
+        display: none !important;
+    }
+}
+
+.md-none{
+    display: none;
+
+    @include respond("phone"){
+        display: block;
+    }
+}
+
+.MB-2{
+    margin-bottom: 2rem;
+}

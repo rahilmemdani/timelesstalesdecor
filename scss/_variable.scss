@@ -1,0 +1,70 @@
+$primary-color: #224660;
+$secondary-color: #1c2028;
+
+$blue-color: #193f6f;
+$blue-color-2: #2a2c41;
+
+$black-color: #000000;
+$white-color: #ffffff;
+
+$black-color-1: #173346;
+$black-color-2: #1a1a1a;
+
+$grey-color-1: #8a8a8a;
+$grey-color-2: #9d9d9d;
+$grey-color-3: #303030;
+
+$green-color: #187B41;
+$red-color: #D00814;
+
+$font-family: "Arial", Helvetica, sans-serif;
+
+@mixin respond($breakPoint) {
+    @if $breakPoint == phone-tab {
+        @media (max-width: 991px) {
+            @content;
+        }
+    }
+
+    @if $breakPoint == phone {
+        @media (max-width: 600px) {
+            @content;
+        }
+    }
+
+    @if $breakPoint == tab-port {
+        @media (min-width: 600px) and (max-width: 1023px) {
+            // 56.25 em
+            @content;
+        }
+    }
+
+    @if $breakPoint == small-desktop {
+        @media (min-width: 1024px) and (max-width: 1279px) {
+            @content;
+        }
+    }
+
+    @if $breakPoint == regular-desktop {
+        @media (min-width: 1280px) and (max-width: 1440px) {
+            @content;
+        }
+    }
+
+    @if $breakPoint == large-desktop {
+        @media (min-width: 1401px) and (max-width: 1900px) {
+            @content;
+        }
+    }
+}
+
+@mixin flexCenter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin square($size) {
+    height: $size;
+    width: $size;
+}

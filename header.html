@@ -1,0 +1,60 @@
+<div class="header">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+      <a href="/" class="navbar-brand">
+        <img src="images/logo-header.png" alt="" />
+      </a>
+
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <b>Aga Khan Education Board for India</b>
+        </ul>
+      </div>
+
+      <div class="social-links-main">
+        <ul class="social-links">
+          <li>
+            <a class="gujarati-language">
+              ગુજરાતી
+            </a>
+          </li>
+          <li>
+            <a>
+              English
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</div>
+
+<!-- Add active class for active page -->
+<script type="text/javascript">
+  $(document).ready(function () {
+    url = window.location.href;
+
+    $(".navbar-nav li a").each(function () {
+      if (url == this.href) {
+        $(this).closest("a").addClass("active");
+      }
+    });
+  });
+
+  if(window.innerWidth > 991){
+    $('li.dropdown').hover(function () {
+      $(this).find('.dropdown-menu').stop(true, true).delay(100).fadeIn(100);
+    }, function () {
+      $(this).find('.dropdown-menu').stop(true, true).delay(100).fadeOut(100);
+    });
+  }
+
+  if ($(".child-menu a.active").hasClass("active")) {
+    $(".dropdown-toggle").addClass("active");
+  }
+</script>

@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1,user-scalable=0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <link rel="icon" href="images/favicon.png" type="image/png" sizes="16x16" />
+  <title>AKEB</title>
+
+  <!-- Bootstrap css -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+    integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous" />
+
+  <!-- Font css -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <!-- Custom css -->
+  <link rel="stylesheet" href="scss/index.css" />
+
+  <!-- Jquery js -->
+  <script type="text/javascript" src="js/jquery.js"></script>
+  <script type="text/javascript" src="js/data.js"></script>
+
+  <!-- Bootstrap js -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+    crossorigin="anonymous"></script>
+
+  <!-- Custom js code for header, footer and loader -->
+  <script type="text/javascript" src="js/custom.js"></script>
+</head>
+
+<body>
+  <div class="loader">
+    <div class="lds-ripple">
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+
+  <div id="header"></div>
+
+  <div id="home" class="banner">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-5">
+          <div class="banner__img">
+            <img src="images/change-image.png" />
+          </div>
+          </div>
+        <div class="col-lg-7">
+          <div class="banner__content">
+            <p>“I am sure that all of you here today will agree that we live in a time of rapid change - change that is often not predictable, and not always positive. The best way to manage change, whether positive or negative, is to anticipate it and prepare for it…… There is no greater form of preparation for change than education. I also think that there is no better investment that the individual, parents, and the nation can make than an investment in education of the highest possible quality.”</p>
+            <div class="banner__name">
+              <b>Mawlana Hazar Imam</b> 
+            </div>
+            <div class="banner__location">
+              <i>Opening ceremony of Aga Khan School at Osh, Kyrgyz Republic 30 October 2002</i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="about-akeb">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-7">
+          <h2>Influence Of Schools In Child’s Development</h2>
+          <p>A school is a place where a child spends most of the time right from early childhood years. The period that children spend in school is considered as the most crucial years for a child’s development. Thus, parents should be very careful while choosing a school for their children. The school should not just be confined to academics but it should also be responsible for moral, spiritual, mental, physical as well as cultural development of the children.</p>
+        </div>
+        <div class="col-lg-5">
+          <div class="about-akeb__banner">
+            <img src="images/school-kids-image.svg" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="about-akeb">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-7">
+          <h2>National, International Board and AKESI Schools Near Your Area</h2>
+          <p>This page helps you to find lorem ipsum dolor sit amet. Learn about a certification board in the boards section, and find out the corresponding schools and their information.</p>
+          <span><b>Disclaimer:</b> This is not an exhaustive list of schools, nor is this an endorsement of any particular schools. To explore more schools other than this list, visit respective board’s website as given in this section</span>
+          <select name="ddlCity" id="ddlCity">
+          </select>
+        </div>
+        <div class="col-lg-5">
+          <div class="about-akeb__banner">
+            <img src="images/map-image.png" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="boards">
+    <div class="container">
+      <h4>Boards</h4>
+      <ul class="boards__name">
+        <li>
+          <button type="button" class="active" id="btnCBSE">CBSE</button>
+        </li>
+        <li>
+          <button type="button" id="btnICSE">ICSE</button>
+        </li>
+        <li>
+          <button type="button" id="btnIGCSE">IGCSE</button>
+        </li>
+        <li>
+          <button type="button" id="btnIB">IB</button>
+        </li>
+        <li>
+          <button type="button" id="btnAKESI">AKESI</button>
+        </li>
+        <li>
+          <button type="button" id="btnALL">ALL</button>
+        </li>
+      </ul>
+
+      <p>The Central Board of Secondary Education (CBSE) is a national level board of education in India for public and private schools, controlled and managed by Union Government of India. There are approximately 21,271 schools in India and 220 schools in 28 foreign countries affiliated to the CBSE.</p>
+
+      <ul class="boards__links">
+        <li>
+          <a>
+            <img src="images/external-link-icon.png" alt="">
+            <span>Learn more about CBSE</span>
+          </a>
+        </li>
+        <li>
+          <a>
+            <img src="images/external-link-icon.png" alt="">
+            <span>CBSE Curriculum</span>
+          </a>
+        </li>
+        <li>
+          <a>
+            <img src="images/external-link-icon.png" alt="">
+            <span>Official List of Schools</span>
+          </a>
+        </li>
+      </ul>
+
+        <h4><label id="lblBoard">CBSE</label> Schools</h4>
+    
+      <div class="table-block">
+        <table>
+          <thead>
+            <tr>
+              <th width="55%">Name</th>
+              <th width="20%">Students from your area</th>
+              <th width="12%"></th>
+              <th width="13%"></th>
+            </tr>
+          </thead>
+        </table>
+  
+        <div class="radius-table">
+          <table>
+            <tbody id="tBody">
+            </tbody>
+            <tfoot><img src="images/loading.gif" id="imgLoading"/></tfoot>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="more-information">
+    <div class="container">
+      <h2>More Information</h2>
+
+      <div class="more-information__row">
+        <div class="more-information__box more-information__box--red">
+          <div>
+            <img src="images/connect-parents-icon.svg" />
+          </div>
+          <h3>
+            <span>connect</span> <br/><b>WITH A PARENT</b>
+          </h3>
+          <p>If you would like to know more about a school through a parent whose child is going to the same school.</p>
+          <p>We will try our best to help you connect with a parent.</p>
+          <a>
+            <img src="images/red-arrow.svg"/>
+            <span>Send Us A Request</span>
+          </a>
+        </div>
+        
+        <div class="more-information__box more-information__box--green">
+          <div>
+            <img src="images/laptop.svg" />
+          </div>
+          <h3>
+            <span>attend</span> <br/><b>OUR WEBINAR</b>
+          </h3>
+          <p>Know more about the difference in ICSE, CBSE, IGCSE and IB curriculum to help you make the decision.</p>
+          <p>Next webinar is scheduled on 2 April 2021.</p>
+          <a>
+            <img src="images/green-arrow.svg"/>
+            <span>Register For Access</span>
+          </a>
+        </div>
+      </div>
+
+      <h2>Frequently Asked Questions (FAQ)</h2>
+      <div class="faq-box">
+        <a id="showIcon1" onClick="onShowAnswer1()">
+          <img src="images/faq-expand-button.png" alt="">
+        </a>
+        <a id="hideIcon1" onClick="onHideAnswer1()" style="display: none;">
+          <img src="images/faq-collapse-button.png" alt="">
+        </a>
+        <h4>Why is this SMS sent to us?</h4>
+        <p id="faq1" style="display: none;">Around this time of the year, a lot of parents look at shifting their kids to National and International Schools and reach out to the Aga Khan Education Board volunteers to look for more information on where the other students from their centers go. In order to encourage those who can shift and make informed decisions, we are making this information on National and International curriculum schools available.</p>
+      </div>
+
+      <div class="faq-box">
+        <a id="showIcon2" onClick="onShowAnswer2()">
+          <img src="images/faq-expand-button.png" alt="">
+        </a>
+        <a id="hideIcon2" onClick="onHideAnswer2()" style="display: none;">
+          <img src="images/faq-collapse-button.png" alt="">
+        </a>
+        <h4>What if I don’t get admissions into the schools? Will the Education Board help us in getting admissions to the schools of our preference?</h4>
+        <p id="faq2" style="display: none;">Around this time of the year, a lot of parents look at shifting their kids to National and International Schools and reach out to the Aga Khan Education Board volunteers to look for more information on where the other students from their centers go. In order to encourage those who can shift and make informed decisions, we are making this information on National and International curriculum schools available.</p>
+      </div>
+
+      <div class="faq-box">
+        <a id="showIcon3" onClick="onShowAnswer3()">
+          <img src="images/faq-expand-button.png" alt="">
+        </a>
+        <a id="hideIcon3" onClick="onHideAnswer3()" style="display: none;">
+          <img src="images/faq-collapse-button.png" alt="">
+        </a>
+        <h4>How would I know about the admission process, the fees and a feedback on the school and its teachers?</h4>
+        <p id="faq3" style="display: none;">Around this time of the year, a lot of parents look at shifting their kids to National and International Schools and reach out to the Aga Khan Education Board volunteers to look for more information on where the other students from their centers go. In order to encourage those who can shift and make informed decisions, we are making this information on National and International curriculum schools available.</p>
+      </div>
+    </div>
+  </div>
+  
+  <div id="footer"></div>
+</body>
+
+</html>
+
+<script>
+  function onShowAnswer1() {
+    document.getElementById("faq1").style.display = "block";
+    document.getElementById("hideIcon1").style.display = "block";
+    document.getElementById("showIcon1").style.display = "none";
+  }
+
+  function onHideAnswer1() {
+    document.getElementById("faq1").style.display = "none";
+    document.getElementById("hideIcon1").style.display = "none";
+    document.getElementById("showIcon1").style.display = "block";
+  }
+
+  function onShowAnswer2() {
+    document.getElementById("faq2").style.display = "block";
+    document.getElementById("hideIcon2").style.display = "block";
+    document.getElementById("showIcon2").style.display = "none";
+  }
+
+  function onHideAnswer2() {
+    document.getElementById("faq2").style.display = "none";
+    document.getElementById("hideIcon2").style.display = "none";
+    document.getElementById("showIcon2").style.display = "block";
+  }
+
+  function onShowAnswer3() {
+    document.getElementById("faq3").style.display = "block";
+    document.getElementById("hideIcon3").style.display = "block";
+    document.getElementById("showIcon3").style.display = "none";
+  }
+
+  function onHideAnswer3() {
+    document.getElementById("faq3").style.display = "none";
+    document.getElementById("hideIcon3").style.display = "none";
+    document.getElementById("showIcon3").style.display = "block";
+  }
+</script>
