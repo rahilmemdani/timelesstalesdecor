@@ -10,6 +10,7 @@ $(window).load(function () {
         $.each(result.data, function (key, value) {
             $('#ddlCity').append($("<option></option>").val(value).html(value));
         });
+        $('#imgLoading').hide();
     }
 });
 
