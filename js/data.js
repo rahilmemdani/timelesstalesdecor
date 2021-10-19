@@ -83,7 +83,7 @@ $('#btnALL').click(
     $(this).addClass('active');
       var city=$('#ddlCity').val();
       var board = $(this).text();
-      callApiAndPopulateBoardDetails(city,board);
+      callApiAndPopulateBoardDetails(city,'');
   }
 );
 
@@ -110,13 +110,12 @@ function callApiAndPopulateBoardDetails(city,board)
               table_body +='</td>';
               
               table_body +='<td width="20%">';
-              //alert(result.data[i].noOfStudents);
-              table_body +='<span>'+(result.data[i].noOfStudents==null?'0':result.data[i].noOfStudents)+'</span>';
+              table_body +='<span>'+(result.data[i].noOfStudents==null?'-':result.data[i].noOfStudents)+'</span>';
               table_body +='</td>';
               
             
               table_body +='<td width="12%">';
-              table_body +='<a href="https://maps.google.com?q=19.1472339,72.8345429"+result.data[i].latitude+","+result.data[i].longitude><img src="images/map-icon.png" /><span>Map</span></a>';
+              table_body +='<a href="https://maps.google.com?q=19.1472339,72.8345429"+result.data[i].latitude+","+result.data[i].longitude target="_blank"><img src="images/map-icon.png" /><span>Map</span></a>';
               table_body +='</td>';
               
               table_body +='<td width="13%">';
