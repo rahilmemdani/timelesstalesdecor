@@ -4,10 +4,12 @@
   "scripts": {
     "ng": "ng",
     "start-local": "live-server --entry-file=index.html",
-    "build-css": "node-sass --include-path scss scss/index.scss scss/index.css",
+    "build-css": "sass scss/index.scss scss/index.css",
     "watch-css": "nodemon -e scss -x npm run build-css"
   },
   "dependencies": {
-    "nodemon": "^2.0.6"
+    "nodemon": "^2.0.6",
+    "sass": "^1.43.2",
+    "sass-loader": "^12.2.0"
   }
 }
