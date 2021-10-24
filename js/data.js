@@ -41,6 +41,7 @@ $('#btnCBSE').click(
     $(this).addClass('active');
       var city=$('#ddlCity').val();
       var board = $(this).text();
+      $('#selectedBoard').text(board);
       $("#aboutBoardLink").attr("href", aboutCBSELink);
       $("#OfficialLink").attr("href", officialCBSELink);
       callApiAndPopulateBoardDetails(city,board);
@@ -55,6 +56,7 @@ $('#btnICSE').click(
     $(this).addClass('active');
       var city=$('#ddlCity').val();
       var board = $(this).text();
+      $('#selectedBoard').text(board);
       $("#aboutBoardLink").attr("href", aboutICSELink);
       $("#OfficialLink").attr("href", officialICSELink);
       callApiAndPopulateBoardDetails(city,board);
@@ -69,6 +71,7 @@ $('#btnIB').click(
     $(this).addClass('active');
       var city=$('#ddlCity').val();
       var board = $(this).text();
+      $('#selectedBoard').text(board);
       $('#boardInfo').show();
       $("#aboutBoardLink").attr("href", aboutIBLink);
       $("#OfficialLink").attr("href", officialIBLink);
@@ -83,6 +86,7 @@ $('#btnIGCSE').click(
     $(this).addClass('active');
       var city=$('#ddlCity').val();
       var board = $(this).text();
+      $('#selectedBoard').text(board);
       $('#boardInfo').show();
       $("#aboutBoardLink").attr("href",aboutIGCSELink);
       $("#OfficialLink").attr("href",officialIGCSELink);
@@ -98,6 +102,7 @@ $('#btnAKESI').click(
     $(this).addClass('active');
       var city=$('#ddlCity').val();
       var board = $(this).text();
+      $('#selectedBoard').text(board);
       $('#boardInfo').show();
       $("#OfficialLink").attr("href",officialAKESILink);
       callApiAndPopulateBoardDetails(city,board);
