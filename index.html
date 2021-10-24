@@ -88,8 +88,8 @@
       <div class="row">
         <div class="col-lg-7">
           <h2>National, International Board and AKESI Schools Near Your Area</h2>
-          <p>This page helps you to find lorem ipsum dolor sit amet. Learn about a certification board in the boards section, and find out the corresponding schools and their information.</p>
-          <span><b>Disclaimer:</b> This is not an exhaustive list of schools, nor is this an endorsement of any particular schools. To explore more schools other than this list, visit respective board’s website as given in this section</span>
+          <p style="font-size: 12px;">This page helps you to find lorem ipsum dolor sit amet. Learn about a certification board in the boards section, and find out the corresponding schools and their information.</p>
+          <span style="font-size: 12px;"><b>Disclaimer:</b> This is not an exhaustive list of schools, nor is this an endorsement of any particular schools. To explore more schools other than this list, visit respective board’s website as given in this section</span>
           <select name="ddlCity" id="ddlCity">
           </select>
         </div>
@@ -107,7 +107,10 @@
       <h4>Boards</h4>
       <ul class="boards__name">
         <li>
-          <button type="button" class="active" id="btnCBSE">CBSE</button>
+          <button type="button" class="active" id="btnALL">ALL</button>
+        </li>
+        <li>
+          <button type="button" id="btnCBSE">CBSE</button>
         </li>
         <li>
           <button type="button" id="btnICSE">ICSE</button>
@@ -121,51 +124,43 @@
         <li>
           <button type="button" id="btnAKESI">AKESI</button>
         </li>
-        <li>
-          <button type="button" id="btnALL">ALL</button>
-        </li>
         <li id="imgLoading">Loading Schools...</li>
       </ul>
 
+      <div id="boardInfo" style="display: none;">
       <p>The Central Board of Secondary Education (CBSE) is a national level board of education in India for public and private schools, controlled and managed by Union Government of India. There are approximately 21,271 schools in India and 220 schools in 28 foreign countries affiliated to the CBSE.</p>
 
       <ul class="boards__links">
         <li>
-          <a>
+          <a id="aboutBoardLink">
             <img src="images/external-link-icon.png" alt="">
             <span>Learn more about CBSE</span>
           </a>
         </li>
         <li>
-          <a>
-            <img src="images/external-link-icon.png" alt="">
-            <span>CBSE Curriculum</span>
-          </a>
-        </li>
-        <li>
-          <a>
+          <a id="OfficialLink">
             <img src="images/external-link-icon.png" alt="">
             <span>Official List of Schools</span>
           </a>
         </li>
       </ul>
 
+    </div>
+
         <h4><label id="lblBoard">CBSE</label> Schools</h4>
-    
-      <div class="table-block">
-        <table>
-          <thead>
-            <tr>
-              <th width="55%">Name</th>
-              <th width="20%">Students from your area</th>
-              <th width="12%"></th>
-              <th width="13%"></th>
-            </tr>
-          </thead>
-        </table>
-  
-        <div class="radius-table">
-          <table>
+        <div id="nav"></div>
+        <div class="radius-table" style="max-height: 400px;overflow-y: scroll;">
+          <table border="1">
+            <thead style="font-size: 18px;">
+              <tr>
+                <th style="font-size: 14px;" width="40%">Name</th>
+                <th style="font-size: 14px;" width="10%">Curriculum</th>
+                <th style="font-size: 14px;" width="20%">Students from your area</th>
+                <th style="font-size: 14px;" width="15%">Location</th>
+                <th style="font-size: 14px;" width="15%">Visit Website</th>
+              </tr>
+            </thead>
+          
             <tbody id="tBody">
             </tbody>
             <tfoot></tfoot>
@@ -244,6 +239,42 @@
         <h4>How would I know about the admission process, the fees and a feedback on the school and its teachers?</h4>
         <p id="faq3" style="display: none;">Around this time of the year, a lot of parents look at shifting their kids to National and International Schools and reach out to the Aga Khan Education Board volunteers to look for more information on where the other students from their centers go. In order to encourage those who can shift and make informed decisions, we are making this information on National and International curriculum schools available.</p>
       </div>
+
+      
+      <div class="faq-box">
+        <a id="showIcon4" onClick="onShowAnswer4()">
+          <img src="images/faq-expand-button.png" alt="">
+        </a>
+        <a id="hideIcon4" onClick="onHideAnswer4()" style="display: none;">
+          <img src="images/faq-collapse-button.png" alt="">
+        </a>
+        <h4>Are these schools certified? How do I know if they are really good?</h4>
+        <p id="faq4" style="display: none;">Most National and International schools are certified. For more information, please check the school’s website. We also recommend you to do your own survey and network with parents from those schools. Additionally, you can visit ICSE, CBSE, IGCSE and IB website to check if these school’s name is reflecting on their certified list. The link is given above.</p>
+      </div>
+
+      
+      <div class="faq-box">
+        <a id="showIcon5" onClick="onShowAnswer5()">
+          <img src="images/faq-expand-button.png" alt="">
+        </a>
+        <a id="hideIcon5" onClick="onHideAnswer5()" style="display: none;">
+          <img src="images/faq-collapse-button.png" alt="">
+        </a>
+        <h4>Are these schools endorsed by AKEB?</h4>
+        <p id="faq5" style="display: none;">These are list of schools in which AKEB students are enrolled. However this list is not an endorsement of schools, nor is this an exhaustive list of National and International board schools. There can be more schools in your area. Please use this link to explore and find more schools of respective boards if you would like to.</p>
+      </div>
+
+      
+      <div class="faq-box">
+        <a id="showIcon6" onClick="onShowAnswer6()">
+          <img src="images/faq-expand-button.png" alt="">
+        </a>
+        <a id="hideIcon6" onClick="onHideAnswer6()" style="display: none;">
+          <img src="images/faq-collapse-button.png" alt="">
+        </a>
+        <h4>Will I get financial support to shift my child?</h4>
+        <p id="faq6" style="display: none;">While we encourage families to opt for good National and International schools for their children to seek Quality Education, currently we do not have a school shifting funding program.</p>
+      </div>
     </div>
   </div>
   
@@ -288,4 +319,42 @@
     document.getElementById("hideIcon3").style.display = "none";
     document.getElementById("showIcon3").style.display = "block";
   }
+
+  function onShowAnswer4() {
+    document.getElementById("faq4").style.display = "block";
+    document.getElementById("hideIcon4").style.display = "block";
+    document.getElementById("showIcon4").style.display = "none";
+  }
+
+  function onHideAnswer4() {
+    document.getElementById("faq4").style.display = "none";
+    document.getElementById("hideIcon4").style.display = "none";
+    document.getElementById("showIcon4").style.display = "block";
+  }
+
+  function onShowAnswer5() {
+    document.getElementById("faq5").style.display = "block";
+    document.getElementById("hideIcon5").style.display = "block";
+    document.getElementById("showIcon5").style.display = "none";
+  }
+
+  function onHideAnswer5() {
+    document.getElementById("faq5").style.display = "none";
+    document.getElementById("hideIcon5").style.display = "none";
+    document.getElementById("showIcon5").style.display = "block";
+  }
+
+  
+  function onShowAnswer6() {
+    document.getElementById("faq6").style.display = "block";
+    document.getElementById("hideIcon6").style.display = "block";
+    document.getElementById("showIcon6").style.display = "none";
+  }
+
+  function onHideAnswer6() {
+    document.getElementById("faq6").style.display = "none";
+    document.getElementById("hideIcon6").style.display = "none";
+    document.getElementById("showIcon6").style.display = "block";
+  }
+
 </script>
