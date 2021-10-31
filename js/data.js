@@ -8,7 +8,10 @@ const officialIBLink="https://www.ibo.org/programmes/find-an-ib-school/";
 const aboutIGCSELink="https://www.cambridgeinternational.org/why-choose-us/parents-and-students/";
 const officialIGCSELink="https://www.cambridgeinternational.org/why-choose-us/find-a-cambridge-school/";
 const officialAKESILink="https://agakhanschools.org/India";
-
+const pageSize=10;
+var page=0;
+var totalRecords;
+var totalNoOfPages;
 $(window).load(function () {
   $.ajax({
     type: "GET",
@@ -30,7 +33,8 @@ $('#ddlCity').change(
       var city= this.value;
       $('button').removeClass('active');
       $('#btnALL').addClass('active');  
-      callApiAndPopulateBoardDetails(city,"ALL");
+      page=0;
+      callApiAndPopulateBoardDetails(city,"ALL",page,pageSize);
   }
 );
 
@@ -44,7 +48,8 @@ $('#btnCBSE').click(
       $('#selectedBoard').text(board);
       $("#aboutBoardLink").attr("href", aboutCBSELink);
       $("#OfficialLink").attr("href", officialCBSELink);
-      callApiAndPopulateBoardDetails(city,board);
+      page=0;
+      callApiAndPopulateBoardDetails(city,board,page,pageSize);
   }
 );
 
@@ -59,7 +64,8 @@ $('#btnICSE').click(
       $('#selectedBoard').text(board);
       $("#aboutBoardLink").attr("href", aboutICSELink);
       $("#OfficialLink").attr("href", officialICSELink);
-      callApiAndPopulateBoardDetails(city,board);
+      page=0;
+      callApiAndPopulateBoardDetails(city,board,page,pageSize);
   }
 );
 
@@ -75,7 +81,8 @@ $('#btnIB').click(
       $('#boardInfo').show();
       $("#aboutBoardLink").attr("href", aboutIBLink);
       $("#OfficialLink").attr("href", officialIBLink);
-      callApiAndPopulateBoardDetails(city,board);
+      page=0;
+      callApiAndPopulateBoardDetails(city,board,page,pageSize);
   }
 );
 
@@ -90,7 +97,8 @@ $('#btnIGCSE').click(
       $('#boardInfo').show();
       $("#aboutBoardLink").attr("href",aboutIGCSELink);
       $("#OfficialLink").attr("href",officialIGCSELink);
-      callApiAndPopulateBoardDetails(city,board);
+      page=0;
+      callApiAndPopulateBoardDetails(city,board,page,pageSize);
   }
 );
 
@@ -105,7 +113,8 @@ $('#btnAKESI').click(
       $('#selectedBoard').text(board);
       $('#boardInfo').show();
       $("#OfficialLink").attr("href",officialAKESILink);
-      callApiAndPopulateBoardDetails(city,board);
+      page=0;
+      callApiAndPopulateBoardDetails(city,board,page,pageSize);
   }
 );
 
@@ -117,10 +126,30 @@ $('#btnALL').click(
     $(this).addClass('active');
       var city=$('#ddlCity').val();
       var board = $(this).text();
-      callApiAndPopulateBoardDetails(city,'ALL');
+      page=0;
+      callApiAndPopulateBoardDetails(city,"",page,pageSize);
   }
 );
 
+
+$('#btnPrev').click(
+  function() {
+    var city=$('#ddlCity').val();
+    var board = $('#lblBoard').html();
+    page--;
+    callApiAndPopulateBoardDetails(city,board,page,pageSize);
+  }
+);
+
+$('#btnNext').click(
+  function() {
+    var city=$('#ddlCity').val();
+    var board = $('#lblBoard').html();
+    
+    page++;
+    callApiAndPopulateBoardDetails(city,board,page,pageSize);
+  }
+);
 
 //+"&page"+page+"&size="+size
 function callApiAndPopulateBoardDetails(city,board)
@@ -129,22 +158,42 @@ function callApiAndPopulateBoardDetails(city,board)
         $('#lblBoard').text(board);
 
         if(board == "ALL")board="";
-
         $('#imgLoading').show();
-        var url =  "https://akeb-api.herokuapp.com/api/schools?city="+city+"&curriculum="+board;
-        
+        var url =  "https://akeb-api.herokuapp.com/api/schools?city="+city+"&curriculum="+board+"&page="+page+"&size="+pageSize;
         $.ajax({
           type: "GET",
           url: url,
           dataType: "json",
           contentType: "application/json; charset=utf-8",
           success: function (result) {
+            totalRecords = result.totalElements;
+            
+            totalNoOfPages = Math.floor((totalRecords/pageSize));
+
+            if(totalRecords%pageSize > 0){
+              totalNoOfPages++;
+            }
+            
+            if(totalNoOfPages==1 || totalNoOfPages==0){
+              $("#btnPrev").attr("disabled", true);
+              $("#btnNext").attr("disabled", true);
+            }else if(page == (totalNoOfPages-1)){
+            $("#btnNext").attr("disabled", true);
+            $("#btnPrev").attr("disabled", false);
+            }else if(page == 0){
+              $("#btnPrev").attr("disabled", true);
+              $("#btnNext").attr("disabled", false);
+            }else{
+              $("#btnPrev").attr("disabled", false);
+              $("#btnNext").attr("disabled", false);
+            }
+
             var number_of_rows = result.data.length;
-            var number_of_cols = 4;
-            var table_body = '<table border="1">';
+        
+            var table_body = '';
             
             for(var i=0;i<number_of_rows;i++){
-    
+                
               table_body+='<tr>';
               table_body +='<td width="40%">';
               table_body +='<b>'+result.data[i].name+'</b>';
