@@ -87,11 +87,15 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-7">
+
           <h2>National, International Board and AKESI Schools Near Your Area</h2>
           <p style="font-size: 12px;">This page helps you to find lorem ipsum dolor sit amet. Learn about a certification board in the boards section, and find out the corresponding schools and their information.</p>
           <span style="font-size: 12px;"><b>Disclaimer:</b> This is not an exhaustive list of schools, nor is this an endorsement of any particular schools. To explore more schools other than this list, visit respective board’s website as given in this section</span>
-          <select name="ddlCity" id="ddlCity">
-          </select>
+          <label><b>City :  </b></label>  <select name="ddlCity" id="ddlCity"></select>
+          <label><b>Pincode :</b></label>  <input type="text" id="txtPincode" style="width: 20%;"/>
+          <button type="button" id="btnSearch">Get Schools</button>
+          <br>
+          
         </div>
         <div class="col-lg-5">
           <div class="about-akeb__banner">
@@ -157,8 +161,9 @@
           <table border="1">
             <thead style="font-size: 18px;">
               <tr>
-                <th style="font-size: 14px;" width="40%">Name</th>
+                <th style="font-size: 14px;" width="35%">Name</th>
                 <th style="font-size: 14px;" width="10%">Curriculum</th>
+                <th id="thDistance" style="display: none;font-size: 14px;" width="5%">Distance</th>
                 <th style="font-size: 14px;" width="20%">Students from your area</th>
                 <th style="font-size: 14px;" width="15%">Location</th>
                 <th style="font-size: 14px;" width="15%">Visit Website</th>
