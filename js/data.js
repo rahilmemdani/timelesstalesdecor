@@ -179,7 +179,7 @@ $('#btnNext').click(
 
 function displayCurrentPageData(){
   
-  var currentPageData = schoolData.slice((page*3),((page+1)*3));
+  var currentPageData = schoolData.slice((page*pageSize),((page+1)*pageSize));
 
   var table_body = '';
   var number_of_rows = currentPageData.length;
