@@ -128,11 +128,11 @@
         <li>
           <button type="button" id="btnAKESI">AKESI</button>
         </li>
-        <li id="imgLoading">Loading Schools...</li>
+        <li id="imgLoading"><b>Loading Schools</b><img src="images/loader.gif" style="width:110px;height:90px;"></li>
       </ul>
 
       <div id="boardInfo" style="display: none;">
-      <p>The Central Board of Secondary Education (CBSE) is a national level board of education in India for public and private schools, controlled and managed by Union Government of India. There are approximately 21,271 schools in India and 220 schools in 28 foreign countries affiliated to the CBSE.</p>
+      <p id="selectedBoardDesc">The Central Board of Secondary Education (CBSE) is a national level board of education in India for public and private schools, controlled and managed by Union Government of India. There are approximately 21,271 schools in India and 220 schools in 28 foreign countries affiliated to the CBSE.</p>
 
       <ul class="boards__links">
         <li>
@@ -365,5 +365,25 @@
     document.getElementById("hideIcon6").style.display = "none";
     document.getElementById("showIcon6").style.display = "block";
   }
+
+  $(".boards__name li button").on("click",function(){
+    if($(this).context.innerHTML=='CBSE'){
+    $("#selectedBoardDesc").html(`<p><b>The Central Board of Secondary Education (CBSE)</b> is a national level board of education in India for public and private schools. It is one of the leading boards in public and private schools which is controlled and managed by Union Government of India. CBSE curriculum is child centric. It connects the curricular knowledge in school to wider real-world contexts to make it meaningful to children. It focuses on constructive, experimental, cooperative and collaborative learning involving the active participation of children.</p>`);
+    }else if($(this).context.innerHTML=='ICSE'){
+      $("#selectedBoardDesc").html(`<p><b>ICSE or Indian Certificate for Secondary Education</b> reflects on the principles and fundamentals of theories. The Council for Indian School Certificate Examination is a private school board in India. The ICSE Board focuses on the entire development of the student. ICSE also includes fair weightage for languages, arts and humanities. This makes for a much more integrated, balanced and comprehensive learning. </p>`)
+    }else if($(this).context.innerHTML=='IGCSE'){
+      $("#selectedBoardDesc").html(`<p><b>IGCSE (International General Certificate of Secondary Education) </b>IGCSE has worldwide status and credibility and is offered by Cambridge Assessment InternationalEducation. It has a balanced curriculum.
+IGCSE encourages learner-centered and enquiry-based approach to learning. It develops learners’ skills in creative thinking, enquiry and problem solving, giving learner’s excellent preparation for the next stage in their education.
+It encourages high academic standards through a practical approach to teaching and learning. IGCSE develops and encourages oral/investigative skills, problem solving and team work also.
+</p>`)
+    }else if($(this).context.innerHTML=='IB'){
+      $("#selectedBoardDesc").html(`<p><b>The International Baccalaureate (IB)</b> offers a continuum of international education through four challenging, high quality educational programmes.
+IB programmes encourage both personal development and academic achievement, challenging students to think critically, to ask the right questions and think across disciplines. An IB education also fosters diversity, curiosity and a healthy appetite for learning.
+</p>`);
+    }else if($(this).context.innerHTML=='AKESI'){
+      $('#selectedBoardDesc').html(`<p><b>AKES </b>is one of the largest not-for-profit school systems in the developing world. AKES is built on a century of leadership in education, equipping young learners with the knowledge, skills, attitudes and values to thrive in a complex and dynamic world. At AKES, students make ethical choices, to embrace the strength of pluralism and to serve in their communities. The schools have been an exemplar of progressive education in the regions within which they operate, with a continued emphasis on child-centered learning, teacher training and education for girls. AKES has been a leader in these areas for over a hundred years.
+</p>`);
+    }
+  })
 
 </script>
