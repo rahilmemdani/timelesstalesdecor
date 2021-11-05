@@ -833,6 +833,23 @@ a:focus {
   display: flex;
   align-items: center;
 }
+
+#google_translate_element {
+  text-align: right;
+}
+
+.goog-logo-link {
+  display: none !important;
+}
+
+.goog-te-gadget {
+  color: transparent !important;
+}
+
+.goog-te-banner-frame.skiptranslate {
+  display: none !important;
+}
+
 @media (max-width: 600px) {
   .footer__bottom .col.text-right {
     flex-grow: 2 !important;
