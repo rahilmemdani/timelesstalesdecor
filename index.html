@@ -93,7 +93,7 @@
         <div class="col-lg-7">
 
           <h2>National, International Board and AKESI Schools Near Your Area</h2>
-          <p style="font-size: 12px;">This page helps you to find lorem ipsum dolor sit amet. Learn about a certification board in the boards section, and find out the corresponding schools and their information.</p>
+          <p style="font-size: 12px;">Learn about a certification board in the boards section, and find out the corresponding schools and their information.</p>
           <span style="font-size: 12px;"><b>Disclaimer:</b> This is not an exhaustive list of schools, nor is this an endorsement of any particular schools. To explore more schools other than this list, visit respective board’s website as given in this section</span>
           <label><b>City :  </b></label>  <select name="ddlCity" id="ddlCity"></select>
           <label><b>Pincode :</b></label>  <input type="text" id="txtPincode" style="width: 20%;"/>
@@ -132,7 +132,9 @@
         <li>
           <button type="button" class="notranslate" id="btnAKESI">AKESI</button>
         </li>
-        <li id="imgLoading"><b>Loading Schools</b><img src="images/loader.gif" style="width:110px;height:90px;"></li>
+        <li id="imgLoading" class="notranslate"><b>Loading Schools</b>
+          <img src="images/loader.gif" style="width:110px;height:90px;">
+        </li>
       </ul>
 
       <div id="boardInfo" style="display: none;">
@@ -227,7 +229,7 @@
         <a id="hideIcon1" onClick="onHideAnswer1()" style="display: none;">
           <img src="images/faq-collapse-button.png" alt="">
         </a>
-        <h4>Why is this SMS sent to us?</h4>
+        <h4>Why is this message sent to us?</h4>
         <p id="faq1" style="display: none;">Around this time of the year, a lot of parents look at shifting their kids to National and International Schools and reach out to the Aga Khan Education Board volunteers to look for more information on where the other students from their centers go. In order to encourage those who can shift and make informed decisions, we are making this information on National and International curriculum schools available.</p>
       </div>
 
@@ -301,7 +303,7 @@
 
 <script>
  
- //Google Translate
+   //Google Translate
   function setCookie(key, value, expiry) {
     var expires = new Date();
     expires.setTime(expires.getTime() + (expiry * 24 * 60 * 60 * 1000));
@@ -323,29 +325,11 @@
      window.location.href = "about:blank";
     }
 
+
 </script>
 <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
 <script>
-$(document).ready(function(){
-$(".navbar-nav li a").each(function () {
-      if (url == this.href) {
-        $(this).closest("a").addClass("active");
-      }
-    });
-
-  if(window.innerWidth > 991){
-    $('li.dropdown').hover(function () {
-      $(this).find('.dropdown-menu').stop(true, true).delay(100).fadeIn(100);
-    }, function () {
-      $(this).find('.dropdown-menu').stop(true, true).delay(100).fadeOut(100);
-    });
-  }
-
-  if ($(".child-menu a.active").hasClass("active")) {
-    $(".dropdown-toggle").addClass("active");
-  }
-
 
   function onShowAnswer1() {
     document.getElementById("faq1").style.display = "block";
@@ -445,7 +429,6 @@ IB programmes encourage both personal development and academic achievement, chal
       google.language.translate($('#some').html(), 'en', 'fr', function (result) {
         $('#some').html(result.translation);
       });
-    });
   })
   })
 })
