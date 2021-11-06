@@ -64,11 +64,9 @@
     var url = new URL(window.location.href);
     var lang=$(this).context.innerText;
     if(lang=='ગુજરાતી'){
-      url.searchParams.set('l','gu');
       window.location.href = window.location.origin+`/?l=gu`
       
     }else{
-      url.searchParams.set('l','en');
       window.location.href = window.location.origin+`/?l=en`
     }
   })
