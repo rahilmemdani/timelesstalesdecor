@@ -8,8 +8,8 @@ const officialIBLink="https://www.ibo.org/programmes/find-an-ib-school/";
 const aboutIGCSELink="https://www.cambridgeinternational.org/why-choose-us/parents-and-students/";
 const officialIGCSELink="https://www.cambridgeinternational.org/why-choose-us/find-a-cambridge-school/";
 const officialAKESILink="https://agakhanschools.org/India";
-const GET_CITY_LIST_URL="https://akeb-api.herokuapp.com/schools/cities";
-const GET_SCHOOLS_URL="https://akeb-api.herokuapp.com/schools";
+const GET_CITY_LIST_URL="https://qe.akebi.org/api/schools/cities";
+const GET_SCHOOLS_URL="https://qe.akebi.org/api/schools";
 
 const pageSize=10;
 var page=0;
