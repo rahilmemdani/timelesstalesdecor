@@ -682,11 +682,20 @@ a:focus {
 }
 
 .radius-table {
-  border-radius: 0.8rem;
+   border-radius: 0.8rem;
   border: 1px solid #88A9C1;
-  margin-bottom: 9.5rem;
+  margin-bottom: 9.5rem; 
 }
 
+table th {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  border: 0px 1px 0px 0px;
+  z-index: 1;
+  background:  #88A9C1; 
+  
+}
 .table-block {
   width: 70%;
 }
@@ -932,9 +941,4 @@ margin-top:5px;
   border-radius: 0.8rem;
   border-color: #224660;
 }
-
-/* .radius-table{
-  
-} */
-
 /*# sourceMappingURL=index.css.map */
