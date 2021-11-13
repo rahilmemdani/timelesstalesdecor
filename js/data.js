@@ -200,7 +200,12 @@ function displayCurrentPageData(){
     if(isSearchByPincode){
     $('#thDistance').show();  
     var distance = (currentPageData[i].distance/1000);
-    if(distance>100) distance = "More than 100";
+    if(distance>100){
+       distance = "More than 100";
+    }else{
+      distance=(distance).toFixed(2);
+    }
+
 
     distance+=" KM";
 

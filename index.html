@@ -12,6 +12,11 @@
   <!-- Bootstrap css -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
     integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous" />
+    
+    <!-- Font Awesome -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
 
   <!-- Font css -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -44,7 +49,7 @@
   </div>
 
   <div class="notranslate">
-    <span id="google_translate_element" style="position: absolute; left:815px; visibility: hidden;"></span>
+    <span id="google_translate_element" style="visibility: hidden;"></span>
     <div id="header"></div>
   </div>
 
@@ -158,21 +163,21 @@
     </div>
     <h4><label id="lblBoard">CBSE</label> Schools</h4>
     <div id="nav" style="display: flex; justify-content: flex-end">
-          <button type="button"  id="btnPrev">PREV</button> 
+          <button type="button"  id="btnPrev"><i class="fas fa-arrow-left"></i>  PREV</button> 
           &nbsp;
-          <button type="button"  id="btnNext">NEXT</button>
+          <button type="button"  id="btnNext">NEXT <i class="fas fa-arrow-right"></i></button>
        </div>
        <br/>
         <div class="radius-table" style="max-height: 400px;overflow-y: scroll;">
           <table border="1">
             <thead style="font-size: 18px;">
               <tr>
-                <th style="font-size: 14px;" width="35%">Name</th>
-                <th style="font-size: 14px;" width="10%">Curriculum</th>
-                <th id="thDistance" style="display: none;font-size: 14px;" width="5%">Distance</th>
-                <th style="font-size: 14px;" width="20%">Students from your area</th>
-                <th style="font-size: 14px;" width="15%">Location</th>
-                <th style="font-size: 14px;" width="15%">Visit Website</th>
+                <th style="font-size: 14px; color:white;" width="35%"><b>Name</b></th>
+                <th style="font-size: 14px; color:white;" width="10%"><b>Curriculum</b></th>
+                <th id="thDistance" style="display: none;font-size: 14px; color:white;" width="5%"><b>Distance</b></th>
+                <th style="font-size: 14px; color:white;" width="20%"><b>Students from your area</b></th>
+                <th style="font-size: 14px; color:white;" width="15%"><b>Location</b></th>
+                <th style="font-size: 14px; color:white;" width="15%"><b>Visit Website</b></th>
               </tr>
             </thead>
           
@@ -199,7 +204,7 @@
           </h3>
           <p>If you would like to know more about a school through a parent whose child is going to the same school.</p>
           <p>We will try our best to help you connect with a parent.</p>
-          <a href="https://forms.gle/YSUMpeXFy4kwFLTQ6">
+          <a href="https://forms.gle/YSUMpeXFy4kwFLTQ6" target="_blank">
             <img src="images/red-arrow.svg"/>
             <span>Send Us A Request</span>
           </a>
@@ -214,7 +219,7 @@
           </h3>
           <p>Know more about the difference in ICSE, CBSE, IGCSE and IB curriculum to help you make the decision.</p>
           <p>Next webinar is scheduled on 14th November 2021.</p>
-          <a href="https://forms.gle/gkn7vucS9x67UpPK6">
+          <a href="https://forms.gle/gkn7vucS9x67UpPK6" target="_blank">
             <img src="images/green-arrow.svg"/>
             <span>Register For Access</span>
           </a>
@@ -428,5 +433,9 @@ IB programmes encourage both personal development and academic achievement, chal
   })
   })
 })
+$("#ddlCity").on('click',function(e){
+    e.preventDefault();
+    $('#txtPincode').val('');
+  })
 
 </script>
