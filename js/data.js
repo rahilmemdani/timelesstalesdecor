@@ -1,6 +1,6 @@
 
 const aboutCBSELink="https://www.cbse.gov.in/cbsenew/pedagogy.html";
-const officialCBSELink="http://cbseaff.nic.in/cbse_aff/schdir_Report/userview.aspx";
+const officialCBSELink="https://saras.cbse.gov.in/SARAS/Home/ListOfActiveNewSchool";
 const aboutICSELink="https://www.youtube.com/watch?v=4KEnXvl7kgs&feature=emb_logo";
 const officialICSELink="https://www.cisce.org/Locate.aspx";
 const aboutIBLink="https://www.youtube.com/watch?v=9LuuJa3t-m8";
@@ -70,8 +70,8 @@ $('#btnCBSE').click(
       var city=$('#ddlCity').val();
       var board = $(this).text();
       $('#selectedBoard').text(board);
-      $("#aboutBoardLink").attr("href", aboutCBSELink);
-      $("#OfficialLink").attr("href", officialCBSELink);
+      $("#aboutBoardLink").attr({"href": aboutCBSELink,"target":"_blank"});
+      $("#OfficialLink").attr({"href": officialCBSELink,"target":"_blank"});
       page=0;
       callApiAndPopulateBoardDetails(city,board);
   }
@@ -86,8 +86,8 @@ $('#btnICSE').click(
       var city=$('#ddlCity').val();
       var board = $(this).text();
       $('#selectedBoard').text(board);
-      $("#aboutBoardLink").attr("href", aboutICSELink);
-      $("#OfficialLink").attr("href", officialICSELink);
+      $("#aboutBoardLink").attr({"href": aboutICSELink,"target":"_blank"});
+      $("#OfficialLink").attr({"href": officialICSELink,"target":"_blank"});
       page=0;
       callApiAndPopulateBoardDetails(city,board);
   }
@@ -103,8 +103,8 @@ $('#btnIB').click(
       var board = $(this).text();
       $('#selectedBoard').text(board);
       $('#boardInfo').show();
-      $("#aboutBoardLink").attr("href", aboutIBLink);
-      $("#OfficialLink").attr("href", officialIBLink);
+      $("#aboutBoardLink").attr({"href": aboutIBLink,"target":"_blank"});
+      $("#OfficialLink").attr({"href": officialIBLink,"target":"_blank"});
       page=0;
       callApiAndPopulateBoardDetails(city,board);
   }
@@ -119,8 +119,8 @@ $('#btnIGCSE').click(
       var board = $(this).text();
       $('#selectedBoard').text(board);
       $('#boardInfo').show();
-      $("#aboutBoardLink").attr("href",aboutIGCSELink);
-      $("#OfficialLink").attr("href",officialIGCSELink);
+      $("#aboutBoardLink").attr({"href":aboutIGCSELink,"target":"_blank"});
+      $("#OfficialLink").attr({"href":officialIGCSELink,"target":"_blank"});
       page=0;
       callApiAndPopulateBoardDetails(city,board);
   }
@@ -136,7 +136,7 @@ $('#btnAKESI').click(
       var board = $(this).text();
       $('#selectedBoard').text(board);
       $('#boardInfo').show();
-      $("#OfficialLink").attr("href",officialAKESILink);
+      $("#OfficialLink").attr({"href":officialAKESILink,"target":"_blank"});
       page=0;
       callApiAndPopulateBoardDetails(city,board);
   }
@@ -161,6 +161,7 @@ $('#btnPrev').click(
     var city=$('#ddlCity').val();
     var board = $('#lblBoard').html();
     page--;
+    // console.l0g
     displayCurrentPageData();
     enableDisablePagination();
   }
