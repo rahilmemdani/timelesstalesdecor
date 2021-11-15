@@ -39,8 +39,16 @@ $(window).load(function () {
 
 $('#btnSearch').click(
   function() {
+    var city= $("#ddlCity").val();
+
+    if(city == null){
+      alert("Please select City to view Schools");
+      return;
+    }
 
     var pincode = document.getElementById("txtPincode").value;
+
+
 
     if(pincode == ""){
       isSearchByPincode = false;
@@ -53,7 +61,6 @@ $('#btnSearch').click(
       return;
     }
 
-    var city= $("#ddlCity").val();
     $('button').removeClass('active');
     $('#btnALL').addClass('active');  
     page=0;
@@ -181,7 +188,9 @@ $('#btnNext').click(
 function displayCurrentPageData(){
   
   var currentPageData = schoolData.slice((page*pageSize),((page+1)*pageSize));
-
+  
+  $('#pageText').text("Page "+(page+1)+" of total "+totalNoOfPages+" pages");
+  
   var table_body = '';
   var number_of_rows = currentPageData.length;
 
@@ -216,7 +225,7 @@ function displayCurrentPageData(){
     }
     
     table_body +='<td width="20%">';
-    table_body +='<span>'+(currentPageData[i].noOfStudents==null?'-':currentPageData[i].noOfStudents)+'</span>';
+    table_body +='<b>'+(currentPageData[i].noOfStudents==null?'-':currentPageData[i].noOfStudents)+'</b>';
     table_body +='</td>';
     
     table_body +='<td width="15%">';
@@ -263,7 +272,7 @@ function callApiAndPopulateBoardDetails(city,board)
         if(board == "ALL")board="";
         $('#imgLoading').show();
         
-        var url =  GET_SCHOOLS_URL+"?city="+city+"&curriculum="+board+"&page=0&size=100";
+        var url =  GET_SCHOOLS_URL+"?city="+city+"&curriculum="+board+"&page=0&size=1000";
 
         if(isSearchByPincode){
           url+="&pincode="+pincode;
