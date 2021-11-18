@@ -235,7 +235,7 @@ function displayCurrentPageData(){
     table_body +='</td>';
     
     table_body +='<td width="15%">';
-    table_body +='<a href=""><img src="images/website-icon.svg" /><span>Website</span></a>'
+    table_body +=`<a href="${currentPageData[i].website}" target="_blank"><img src="images/website-icon.svg" /><span>Website</span></a>`
     table_body +='</td>';
 
     table_body+='</tr>';
