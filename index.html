@@ -98,12 +98,21 @@
         <div class="col-lg-7">
 
           <h2>National, International Board and AKESI Schools Near Your Area</h2>
-          <p style="font-size: 12px;">Learn about a certification board in the boards section, and find out the corresponding schools and their information.</p>
-          <span style="font-size: 12px;"><b>Disclaimer:</b> This is not an exhaustive list of schools, nor is this an endorsement of any particular schools. To explore more schools other than this list, visit respective board’s website as given in this section</span>
-          <label><b>City :  </b></label>  <select name="ddlCity" id="ddlCity"></select>
-          <label><b>Pincode :</b></label>  <input type="text" id="txtPincode" style="width: 20%;"/>
-          <button type="button" id="btnSearch">Get Schools</button>
-          <br>
+          <p>Learn about a certification board in the boards section, and find out the corresponding schools and their information.</p>
+          <span><b>Disclaimer:</b> This is not an exhaustive list of schools, nor is this an endorsement of any particular schools. To explore more schools other than this list, visit respective board’s website as given in this section</span>
+         
+          <div class="field-data">
+            <label><b>City :  </b></label>  
+            <select name="ddlCity" id="ddlCity"></select>
+          </div>
+
+          <div class="field-data">
+            <label><b>Pincode :</b></label>  <input type="text" id="txtPincode"/>
+          </div>
+
+          <div class="field-data">
+            <button type="button" id="btnSearch">Get Schools</button>
+          </div>
           
         </div>
         <div class="col-lg-5">
@@ -143,35 +152,37 @@
       </ul>
 
       <div id="boardInfo" style="display: none;">
-      <p id="selectedBoardDesc"></p>
+        <p id="selectedBoardDesc"></p>
 
-      <ul class="boards__links">
-        <li>
-          <a id="aboutBoardLink">
-            <img src="images/external-link-icon.png" alt="">
-            <span>Learn more about <label id="selectedBoard"></label></span>
-          </a>
-        </li>
-        <li>
-          <a id="OfficialLink">
-            <img src="images/external-link-icon.png" alt="">
-            <span>Official List of Schools</span>
-          </a>
-        </li>
-      </ul>
-
-    </div>
-    <h4><label id="lblBoard">CBSE</label> Schools</h4>
-        <div class="radius-table" style="max-height: 400px;overflow-y: scroll;">
-          <table border="1">
+        <ul class="boards__links">
+          <li>
+            <a id="aboutBoardLink">
+              <img src="images/external-link-icon.png" alt="">
+              <span>Learn more about <span id="selectedBoard"></span></span>
+            </a>
+          </li>
+          <li>
+            <a id="OfficialLink">
+              <img src="images/external-link-icon.png" alt="">
+              <span>Official List of Schools</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+      
+      <h4><label id="lblBoard">CBSE</label> Schools</h4>
+      
+      <div>
+        <div class="radius-table">
+          <table>
             <thead style="font-size: 18px;">
               <tr>
-                <th style="font-size: 14px; color:white;" width="35%"><b>Name</b></th>
-                <th style="font-size: 14px; color:white;" width="10%"><b>Curriculum</b></th>
+                <th width="32%"><b>Name</b></th>
+                <th width="10%"><b>Curriculum</b></th>
                 <th id="thDistance" style="display: none;font-size: 14px; color:white;" width="5%"><b>Distance</b></th>
-                <th style="font-size: 14px; color:white;" width="20%"><b>Students from your area</b></th>
-                <th style="font-size: 14px; color:white;" width="15%"><b>Location</b></th>
-                <th style="font-size: 14px; color:white;" width="15%"><b>Visit Website</b></th>
+                <th width="20%"><b>Students from your area</b></th>
+                <th width="15%"><b>Location</b></th>
+                <th width="18%"><b>Visit Website</b></th>
               </tr>
             </thead>
           
@@ -181,15 +192,17 @@
             </tfoot>
           </table>
         </div>
-        <div id="nav" style="display: flex; justify-content: flex-end">
+        
+        <div id="nav" class="pagination">
           <b><label id="pageText" ></label></b>
           &nbsp;
           <button type="button"  id="btnPrev"><i class="fas fa-arrow-left"></i>  PREV</button> 
           &nbsp;
           <button type="button"  id="btnNext">NEXT <i class="fas fa-arrow-right"></i></button>
-       </div>
-       <br/>
+        </div>
       </div>
+
+      <!-- <p class="no-data-school-info">Please select city and pincode to get schools information</p> -->
     </div>
   </div>
 
