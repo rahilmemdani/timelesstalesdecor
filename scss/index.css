@@ -768,13 +768,23 @@ a:focus {
 .more-information__box div img {
   margin: 2.3rem 0 0 1.3rem;
 }
+
+.logo{
+  margin: 2.3rem 0 0 1.3rem;
+  vertical-align: top;
+  position: relative;
+  top: 3px;
+  color: rgb(180, 180, 0);
+  font-size: 30px;
+}
+
 .more-information__box p {
   color: #002C4B;
   margin-bottom: 1.3rem;
   font-size: 1.6rem;
   line-height: 2.2rem;
 }
-.more-information__box a {
+.more-information__box .more_info_link {
   position: absolute;
   cursor: pointer;
   right: 1rem;
@@ -810,6 +820,17 @@ a:focus {
 .more-information__box--green a span {
   color: #187B41;
 }
+
+.more-information__box--blue div {
+  background: rgb(241, 241, 211)
+}
+.more-information__box--blue h3 {
+  color: rgb(163, 163, 0);
+}
+.more-information__box--blue a span {
+  color: rgb(144, 144, 0);
+}
+
 .more-information__box--red div {
   background: rgba(208, 8, 20, 0.1);
 }
