@@ -990,7 +990,7 @@ border-radius: 25px;
 
 .more-information {
   padding: 3.5rem 0;
-  background: #DFE9F0;
+  background: #DFDFF8;
 }
 .more-information h2 {
   color: #224660;
@@ -1371,6 +1371,17 @@ html, body {
   margin-right: 24px;
 }
 
+.menu > a {
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+  color: #837E7E;
+  padding: 0;
+  margin: 110px 50px 57px 0px;  
+  font-size: 15px;
+  text-decoration: none;
+}
+
 
 .menu-button{
   color:black;
@@ -1441,7 +1452,9 @@ html, body {
     justify-content: center;
     align-items: center;  
   }
-  #menu-toggle ~ .menu li {
+
+
+  #menu-toggle ~ .menu > a  {
     height: 0;
     margin: 0;
     padding: 0;
@@ -1451,7 +1464,7 @@ html, body {
     /* border-left: 2px solid #6136BD; */
 
   }
-  #menu-toggle:checked ~ .menu li {
+  #menu-toggle:checked ~ .menu > a  {
     /* border-bottom: 2px solid #6136BD; */
     border-left: 6px solid #6136BD; 
     height: 2.9em;
@@ -1461,7 +1474,7 @@ html, body {
     z-index: 1;
   
   }
-  .menu > li {
+  .menu > a {
     display: flex;
     justify-content: center;
     margin: 0;
@@ -1487,6 +1500,7 @@ html, body {
 .container2 {
   margin-top: 50px;
   background-color: #F7F3FF;
+  /* height: 550px; */
 }
 
  img{
@@ -1548,9 +1562,8 @@ html, body {
   color: #fff;
 }
 
- /* Learn from the Best */
 
-
+/* Learn from the Best */
 .gtco-testimonials {
   position: relative;
   margin-top: 90px;
@@ -1594,7 +1607,7 @@ html, body {
 }
 .gtco-testimonials .card {
   background: #fff;
-  box-shadow: 0 8px 30px -7px #c9dff0;
+  box-shadow: 0 8px 30px -7px #714fbb;
   margin: 0 20px;
   padding: 0 10px;
   border-radius: 20px;
@@ -1653,3 +1666,168 @@ html, body {
   outline: 0;
 }
 
+/* Footer Section */
+ul {
+  margin: 0px;
+  padding: 0px;
+}
+.footer-section {
+background: #DFDFF8;
+position: relative;
+}
+.footer-cta {
+border-bottom: 1px solid #373636;
+}
+.single-cta i {
+color: black;
+font-size: 30px;
+float: left;
+margin-top: 8px;
+}
+.cta-text {
+padding-left: 15px;
+display: inline-block;
+}
+.cta-text h4 {
+color: black;
+font-size: 20px;
+font-weight: 600;
+margin-bottom: 2px;
+}
+.cta-text span {
+color: #757575;
+font-size: 15px;
+}
+.footer-content {
+position: relative;
+z-index: 2;
+}
+.footer-pattern img {
+position: absolute;
+top: 0;
+left: 0;
+height: 330px;
+background-size: cover;
+background-position: 100% 100%;
+}
+.footer-logo {
+margin-bottom: 30px;
+}
+.footer-logo img {
+  max-width: 200px;
+}
+.footer-text p {
+margin-bottom: 14px;
+font-size: 14px;
+    color: #7e7e7e;
+line-height: 28px;
+}
+.footer-social-icon span {
+color: #fff;
+display: block;
+font-size: 20px;
+font-weight: 700;
+font-family: 'Poppins', sans-serif;
+margin-bottom: 20px;
+}
+.footer-social-icon a {
+color: #fff;
+font-size: 16px;
+margin-right: 15px;
+}
+.footer-social-icon i {
+height: 40px;
+width: 40px;
+text-align: center;
+line-height: 38px;
+border-radius: 50%;
+}
+.facebook-bg{
+background: #3B5998;
+}
+.twitter-bg{
+background: #55ACEE;
+}
+.google-bg{
+background: #DD4B39;
+}
+.linkedin-bg{
+  background-color: #0077B7;
+  font-size: 20px;
+}
+.footer-widget-heading h3 {
+color: black;
+font-size: 20px;
+font-weight: 600;
+margin-bottom: 40px;
+position: relative;
+}
+.footer-widget-heading h3::before {
+content: "";
+position: absolute;
+left: 0;
+bottom: -15px;
+height: 2px;
+width: 50px;
+background: #714fbb;
+}
+.footer-widget ul li {
+display: inline-block;
+float: left;
+width: 50%;
+margin-bottom: 12px;
+}
+.footer-widget ul li a:hover{
+color: #714fbb;
+}
+.footer-widget ul li a {
+color: #878787;
+text-transform: capitalize;
+}
+.subscribe-form {
+position: relative;
+overflow: hidden;
+}
+.subscribe-form input {
+width: 100%;
+padding: 14px 28px;
+background: #2E2E2E;
+border: 1px solid #2E2E2E;
+color: #fff;
+}
+.subscribe-form button {
+  position: absolute;
+  right: 0;
+  background: #714fbb;
+  padding: 13px 20px;
+  border: 1px solid #714fbb;
+  top: 0;
+}
+.subscribe-form button i {
+color: #fff;
+font-size: 22px;
+transform: rotate(-6deg);
+}
+.copyright-area{
+background: #714fbb;
+padding: 35px 0;
+}
+.copyright-text p {
+margin: 0;
+font-size: 14px;
+color: #878787;
+}
+.copyright-text p a{
+color: #714fbb;
+}
+.footer-menu li {
+display: inline-block;
+margin-left: 20px;
+}
+.footer-menu li:hover a{
+color: #714fbb;
+}
+.footer-menu li a {
+font-size: 14px;
+color: #878787;
+}
