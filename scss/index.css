@@ -138,18 +138,18 @@ a.site-logo {
 
 /* nav-toggler css start */
 .nav-toggler {
-  border: 3px solid #6136BD;
-  padding: 5px;
+  border: 2.5px solid #6136BD;
+  padding: 3px;
   background-color: transparent;
   cursor: pointer;
-  height: 39px;
+  height: 30px;
   display: none;
 }
 .nav-toggler span, 
 .nav-toggler span:before, 
 .nav-toggler span:after {
-  width: 28px;
-  height: 3px;
+  width: 17px;
+  height: 1px;
   background-color: #6136BD;
   display: block;
   transition: .3s;
