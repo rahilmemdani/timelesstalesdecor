@@ -19,21 +19,21 @@
         <ul class="social-links">
           <li>
             <a> -->
-              <!-- ગુજરાતી -->
-              <!-- Home -->
-            <!-- </a>
+<!-- ગુજરાતી -->
+<!-- Home -->
+<!-- </a>
           </li>
           <li>
             <a> -->
-              <!-- English -->
-              <!-- Vision
+<!-- English -->
+<!-- Vision
             </a>
           </li>
           <li>
             <a> -->
-              <!-- English -->
-              <!-- About us -->
-            <!-- </a>
+<!-- English -->
+<!-- About us -->
+<!-- </a>
           </li>
         </ul>
       </div>
@@ -44,13 +44,13 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- <div class="header__content" > -->
-  <!-- <section class="top-nav" >
+<!-- <section class="top-nav" >
     <div class="logo-growth"> -->
-      <!-- <img src="images/STG logos.003.jpeg" style="margin-left: 10px;" width="150px"/> -->
-      <!-- <img src="images/STG logos.002.jpeg" style="margin-left: 10px;" width="160px"/> -->
-      <!-- <img src="images/STG logos.001.jpeg" style="margin-left: 10px;" width="160px" class="logo-header"/> -->
-      <!-- <img src="images/STG logos.004.jpeg" style="margin-left: 10px;" width="160px"/> -->
-    <!-- </div>
+<!-- <img src="images/STG logos.003.jpeg" style="margin-left: 10px;" width="150px"/> -->
+<!-- <img src="images/STG logos.002.jpeg" style="margin-left: 10px;" width="160px"/> -->
+<!-- <img src="images/STG logos.001.jpeg" style="margin-left: 10px;" width="160px" class="logo-header"/> -->
+<!-- <img src="images/STG logos.004.jpeg" style="margin-left: 10px;" width="160px"/> -->
+<!-- </div>
     <input id="menu-toggle" type="checkbox" />
     <label class='menu-button-container' for="menu-toggle">
     <div class='menu-button'></div>
@@ -72,7 +72,7 @@
     <div class="container">
       <nav class="site-navbar">
         <!-- site logo -->
-         <a href="#home" class="site-logo"><img src="images/STG logos.001.jpeg"  width="80px"/></a>
+        <a href="#home" class="site-logo"><img src="images/STG logos.001.jpeg" width="100px" /></a>
 
         <!-- site menu/nav -->
         <ul>
@@ -92,7 +92,7 @@
 </header>
 
 
- 
+
 
 
 
@@ -108,7 +108,7 @@
     });
   });
 
-  if(window.innerWidth > 991){
+  if (window.innerWidth > 991) {
     $('li.dropdown').hover(function () {
       $(this).find('.dropdown-menu').stop(true, true).delay(100).fadeIn(100);
     }, function () {
@@ -120,46 +120,46 @@
     $(".dropdown-toggle").addClass("active");
   }
 
- 
-  $('.social-links li').on("click",function(e){
+
+  $('.social-links li').on("click", function (e) {
     e.preventDefault();
     var url = new URL(window.location.href);
-    var lang=$(this).context.innerText;
-    if(lang=='ગુજરાતી'){
-      window.location.href = window.location.origin+`/?l=gu`
-      
-    }else{
+    var lang = $(this).context.innerText;
+    if (lang == 'ગુજરાતી') {
+      window.location.href = window.location.origin + `/?l=gu`
+
+    } else {
       window.location.href = window.location.origin;
     }
   })
 
-// define all UI variable
-const navToggler = document.querySelector('.nav-toggler');
-const navMenu = document.querySelector('.site-navbar ul');
-const navLinks = document.querySelectorAll('.site-navbar a');
+  // define all UI variable
+  const navToggler = document.querySelector('.nav-toggler');
+  const navMenu = document.querySelector('.site-navbar ul');
+  const navLinks = document.querySelectorAll('.site-navbar a');
 
-// load all event listners
-allEventListners();
+  // load all event listners
+  allEventListners();
 
-// functions of all event listners
-function allEventListners() {
-  // toggler icon click event
-  navToggler.addEventListener('click', togglerClick);
-  // nav links click event
-  navLinks.forEach( elem => elem.addEventListener('click', navLinkClick));
-}
-
-// togglerClick function
-function togglerClick() {
-  navToggler.classList.toggle('toggler-open');
-  navMenu.classList.toggle('open');
-}
-
-// navLinkClick function
-function navLinkClick() {
-  if(navMenu.classList.contains('open')) {
-    navToggler.click();
+  // functions of all event listners
+  function allEventListners() {
+    // toggler icon click event
+    navToggler.addEventListener('click', togglerClick);
+    // nav links click event
+    navLinks.forEach(elem => elem.addEventListener('click', navLinkClick));
   }
-}
+
+  // togglerClick function
+  function togglerClick() {
+    navToggler.classList.toggle('toggler-open');
+    navMenu.classList.toggle('open');
+  }
+
+  // navLinkClick function
+  function navLinkClick() {
+    if (navMenu.classList.contains('open')) {
+      navToggler.click();
+    }
+  }
 
 </script>
