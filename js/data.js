@@ -1,318 +1,54 @@
+let menu = document.querySelector(".header .menu");
+let navgation = document.querySelector(".header .main-navgation");
+let links = document.querySelectorAll(".header .main-navgation a");
+let overlay = document.querySelector(".overlay");
 
-const aboutCBSELink="https://www.cbse.gov.in/cbsenew/pedagogy.html";
-const officialCBSELink="https://saras.cbse.gov.in/SARAS/Home/ListOfActiveNewSchool";
-const aboutICSELink="https://www.youtube.com/watch?v=4KEnXvl7kgs&feature=emb_logo";
-const officialICSELink="https://www.cisce.org/Locate.aspx";
-const aboutIBLink="https://www.youtube.com/watch?v=9LuuJa3t-m8";
-const officialIBLink="https://www.ibo.org/programmes/find-an-ib-school/";
-const aboutIGCSELink="https://www.cambridgeinternational.org/why-choose-us/parents-and-students/";
-const officialIGCSELink="https://www.cambridgeinternational.org/why-choose-us/find-a-cambridge-school/";
-const officialAKESILink="https://agakhanschools.org/India";
-const GET_CITY_LIST_URL="https://akeb.iiindia.org/api/schools/cities";
-const GET_SCHOOLS_URL="https://akeb.iiindia.org/api/schools";
-
-const pageSize=10;
-var page=0;
-var totalRecords;
-var totalNoOfPages;
-var schoolData;
-var isSearchByPincode=false;
-$(window).load(function () {
-  $.ajax({
-    type: "GET",
-    url: GET_CITY_LIST_URL,
-    dataType: "json",
-    contentType: "application/json; charset=utf-8",
-    headers: {
-      "Authorization": "Bearer 5mdq74lzuk1w8xsobjvg",
-    },
-    success: function (result) {
-        $('#ddlCity').empty();
-        $('#ddlCity').append("<option value='NA' disabled selected>Select city</option>");
-        $.each(result.data, function (key, value) {
-            $('#ddlCity').append($("<option></option>").val(value).html(value));
-        });
-        $('#imgLoading').hide();
-    }
-});
-
-
-$('#btnSearch').click(
-  function() {
-    var city= $("#ddlCity").val();
-
-    if(city == null){
-      alert("Please select City to view Schools");
-      return;
-    }
-
-    var pincode = document.getElementById("txtPincode").value;
-
-
-
-    if(pincode == ""){
-      isSearchByPincode = false;
-    }
-    else if(pincode != "" && pincode.length == 6){
-      isSearchByPincode = true;
-    }
-    else{
-      alert("Please enter valid pincode");
-      return;
-    }
-
-    $('button').removeClass('active');
-    $('#btnALL').addClass('active');  
-    page=0;
-    callApiAndPopulateBoardDetails(city,"ALL");
-  }
-);
-
-
-$('#btnCBSE').click(
-  function() {
-    $('button').removeClass('active');
-    $('#boardInfo').show();
-    $(this).addClass('active');
-      var city=$('#ddlCity').val();
-      var board = $(this).text();
-      $('#selectedBoard').text(board);
-      $("#aboutBoardLink").attr({"href": aboutCBSELink,"target":"_blank"});
-      $("#OfficialLink").attr({"href": officialCBSELink,"target":"_blank"});
-      page=0;
-      callApiAndPopulateBoardDetails(city,board);
-  }
-);
-
-
-$('#btnICSE').click(
-  function() {
-    $('button').removeClass('active');
-    $('#boardInfo').show();
-    $(this).addClass('active');
-      var city=$('#ddlCity').val();
-      var board = $(this).text();
-      $('#selectedBoard').text(board);
-      $("#aboutBoardLink").attr({"href": aboutICSELink,"target":"_blank"});
-      $("#OfficialLink").attr({"href": officialICSELink,"target":"_blank"});
-      page=0;
-      callApiAndPopulateBoardDetails(city,board);
-  }
-);
-
-
-$('#btnIB').click(
-  function() {
-    $('button').removeClass('active');
-    $('#boardInfo').show();
-    $(this).addClass('active');
-      var city=$('#ddlCity').val();
-      var board = $(this).text();
-      $('#selectedBoard').text(board);
-      $('#boardInfo').show();
-      $("#aboutBoardLink").attr({"href": aboutIBLink,"target":"_blank"});
-      $("#OfficialLink").attr({"href": officialIBLink,"target":"_blank"});
-      page=0;
-      callApiAndPopulateBoardDetails(city,board);
-  }
-);
-
-
-$('#btnIGCSE').click(
-  function() {
-    $('button').removeClass('active');
-    $(this).addClass('active');
-      var city=$('#ddlCity').val();
-      var board = $(this).text();
-      $('#selectedBoard').text(board);
-      $('#boardInfo').show();
-      $("#aboutBoardLink").attr({"href":aboutIGCSELink,"target":"_blank"});
-      $("#OfficialLink").attr({"href":officialIGCSELink,"target":"_blank"});
-      page=0;
-      callApiAndPopulateBoardDetails(city,board);
-  }
-);
-
-
-$('#btnAKESI').click(
-  function() {
-    $('button').removeClass('active');
-    $('#boardInfo').show();
-    $(this).addClass('active');
-      var city=$('#ddlCity').val();
-      var board = $(this).text();
-      $('#selectedBoard').text(board);
-      $('#boardInfo').show();
-      $("#OfficialLink").attr({"href":officialAKESILink,"target":"_blank"});
-      page=0;
-      callApiAndPopulateBoardDetails(city,board);
-  }
-);
-
-
-$('#btnALL').click(
-  function() {
-    $('button').removeClass('active');
-    $('#boardInfo').hide();
-    $(this).addClass('active');
-      var city=$('#ddlCity').val();
-      var board = $(this).text();
-      page=0;
-      callApiAndPopulateBoardDetails(city,"");
-  }
-);
-
-
-$('#btnPrev').click(
-  function() {
-    var city=$('#ddlCity').val();
-    var board = $('#lblBoard').html();
-    page--;
-    // console.l0g
-    displayCurrentPageData();
-    enableDisablePagination();
-  }
-);
-
-$('#btnNext').click(
-  function() {
-    var city=$('#ddlCity').val();
-    var board = $('#lblBoard').html();
-    
-    page++;
-    displayCurrentPageData();
-    enableDisablePagination();
-  }
-);
-
-function displayCurrentPageData(){
-  
-  var currentPageData = schoolData.slice((page*pageSize),((page+1)*pageSize));
-  
-  $('#pageText').text("Page "+(page+1)+" of total "+totalNoOfPages+" pages");
-  
-  var table_body = '';
-  var number_of_rows = currentPageData.length;
-
-  for(var i=0;i<number_of_rows;i++){
-      
-    table_body+='<tr>';
-    table_body +='<td width="35%">';
-    table_body +='<b>'+currentPageData[i].name+'</b>';
-    table_body +='</td>';
-    
-    table_body +='<td width="10%">';
-    table_body +='<b>'+currentPageData[i].curriculum+'</b>';
-    table_body +='</td>';
-
-    $('#thDistance').hide();
-
-    if(isSearchByPincode){
-    $('#thDistance').show();  
-    var distance = (currentPageData[i].distance/1000);
-    if(distance>100){
-       distance = "More than 100";
-    }else{
-      distance=(distance).toFixed(2);
-    }
-
-
-    distance+=" KM";
-
-    table_body +='<td width="10%">';
-    table_body +='<b>'+distance+'</b>';
-    table_body +='</td>';
-    }
-    
-    table_body +='<td width="20%">';
-    table_body +='<b>'+(currentPageData[i].noOfStudents==null?'-':currentPageData[i].noOfStudents)+'</b>';
-    table_body +='</td>';
-    
-    table_body +='<td width="15%">';
-    var mapURL="https://maps.google.com?q="+(currentPageData[i].latitude+","+currentPageData[i].longitude);
-    //              alert(mapURL);
-    table_body +='<a href="' + mapURL + '" target="_blank"><img src="images/map-icon.png" /><span>Map</span></a>';          
-    table_body +='</td>';
-    
-    table_body +='<td width="15%">';
-    table_body +=`<a href="${currentPageData[i].website}" target="_blank"><img src="images/website-icon.svg" /><span>Website</span></a>`
-    table_body +='</td>';
-
-    table_body+='</tr>';
-  }
-    table_body+='</table>';
-   $('#tBody').html(table_body);
+// Open Navgation Links For Tablets And Mobile.
+function openMobileNavgation() {
+  menu.classList.add("open"); // Open Menu
+  navgation.classList.add("fade-in"); // Open Mobile Navgation
+  controlOverlay("open"); // Open Overlay
 }
 
-function enableDisablePagination(){
-  if(totalNoOfPages==1 || totalNoOfPages==0){
-    $("#btnPrev").attr("disabled", true);
-    $("#btnNext").attr("disabled", true);
-  }else if(page == (totalNoOfPages-1)){
-  $("#btnNext").attr("disabled", true);
-  $("#btnPrev").attr("disabled", false);
-  }else if(page == 0){
-    $("#btnPrev").attr("disabled", true);
-    $("#btnNext").attr("disabled", false);
-  }else{
-    $("#btnPrev").attr("disabled", false);
-    $("#btnNext").attr("disabled", false);
-  }
+// Close Navgation Links For Tablets And Mobile.
+function closeMobileNavgation() {
+  menu.classList.remove("open"); // Close Menu
+  navgation.classList.remove("fade-in"); // Close Mobile Navgation
+  controlOverlay("!open"); // Close Overlay
 }
 
-
-function callApiAndPopulateBoardDetails(city,board)
-      {
-        $('#tBody').empty();
-        $('#lblBoard').text(board);
-        page = 0;
-
-        var pincode = document.getElementById("txtPincode").value;
-
-        if(board == "ALL")board="";
-        $('#imgLoading').show();
-        
-        var url =  GET_SCHOOLS_URL+"?city="+city+"&curriculum="+board+"&page=0&size=1000";
-
-        if(isSearchByPincode){
-          url+="&pincode="+pincode;
-        }
-
-        
-        $.ajax({
-          type: "GET",
-          url: url,
-          dataType: "json",
-          contentType: "application/json; charset=utf-8",
-          headers: {
-            "Authorization": "Bearer 5mdq74lzuk1w8xsobjvg",
-          },
-          success: function (result) {
-
-            if(result.errorMessage != null){
-              alert(result.errorMessage+"- List of Schools from Selected City will be displayed.");
-              document.getElementById("txtPincode").value="";
-              isSearchByPincode=false;
-            }
-
-            totalRecords = result.totalElements;
-            
-            totalNoOfPages = Math.floor((totalRecords/pageSize));
-
-            if(totalRecords%pageSize > 0){
-              totalNoOfPages++;
-            }
-
-            schoolData = result.data;
-            displayCurrentPageData();
-            enableDisablePagination();
-            
-             $('#imgLoading').hide();
-          }
-      });
-      
-      }
-
-    $(".loader").fadeOut("slow");
+menu.addEventListener("click", () => {
+  if (menu.classList.contains("open")) {
+    closeMobileNavgation();
+  } else {
+    openMobileNavgation();
+  }
 });
 
+links.forEach((link) => {
+  link.addEventListener("click", () => {
+    closeMobileNavgation();
+  });
+});
+
+// Reset To Bars Icon Shape IF Width >= 1024px
+window.addEventListener("resize", () => {
+  if (window.innerWidth >= 1024 && menu.classList.contains("open")) {
+    // Close Menu & Mobile Navgation & Overlay
+    closeMobileNavgation();
+  }
+});
+
+// Control [ Open || Close ] Overlay Function.
+function controlOverlay(status) {
+  /// status:
+  /// open => Open Overlay
+  /// anything else open => close Overlay
+  if (status == "open") {
+    overlay.classList.add("fade-in");
+    overlay.classList.remove("fade-out");
+  } else {
+    overlay.classList.add("fade-out");
+    overlay.classList.remove("fade-in");
+  }
+}

@@ -1,8 +1,13 @@
-$(window).load(function () {
-  $(".loader").fadeOut("slow");
-});
-
-$(function () {
-  $("#header").load("./header.html");
-  $("#footer").load("./footer.html");
-});
+const app = new Vue({
+	el: '#app',
+	data: {
+		playingIntro: false
+	},
+	methods: {
+		playIntro() {
+			// set playingIntro to true
+			this.playingIntro = !this.playingIntro
+			console.log(this.playingIntro)
+		}						
+	}
+})
