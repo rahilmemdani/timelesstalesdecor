@@ -902,3 +902,16 @@ h3 {
 #detail .product-images .thumb-nav li.slick-current img {
   border-color: #d12f81;
 }
+
+
+.insta_links {
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+
+@media (min-width: 1024px) { /* You can adjust the min-width to match your desired laptop screen size */
+  .insta_links {
+    margin: 60px;
+  }
+}
