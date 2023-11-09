@@ -995,3 +995,50 @@ h3 {
   }
 }
  */
+
+
+    /* Default styling for larger screens */
+    .overlay {
+      display: none; /* Hide the overlay by default */
+    }
+
+    @media (max-width: 600px) {
+      .overlay {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        cursor: pointer;
+        width: 100%;
+        background-color: rgb(235, 235, 235); /* Set the background color to grey */
+        padding: 15px;
+        text-align: center;
+        box-shadow: 0px -4px 10px rgba(0, 0, 0, 0.1); /* Add a subtle shadow to the overlay */
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        transition: background-color 0.3s ease; /* Smooth transition for background color change */
+      }
+
+      .contact-link {
+        text-decoration: none;
+        font-size: 10px;
+        color: black; /* Set text color to white */
+        padding: 8px 16px;
+        border-radius: 20px;
+        background-color: transparent; /* Set background color to black */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: background-color 0.3s ease; /* Smooth transition for background color change */
+      }
+
+      .contact-link svg {
+        width: 20px;
+        height: 20px;
+        margin-right: 8px;
+      }
+
+      .contact-link:hover {
+        background-color: #c3bfbf; /* Darker grey on hover */
+      }
+    }
