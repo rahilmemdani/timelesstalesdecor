@@ -1111,12 +1111,9 @@ Static.SQUARESPACE_CONTEXT = {"facebookAppId":"314192535267336","facebookApiVers
           <!-- Menu Navigation -->
 <div class="header-menu-nav-folder-content">
 
-  <div class="container header-menu-nav-item header-menu-nav-item--collection header-menu-nav-item--active header-menu-nav-item--homepage">
+  <div class="container header-menu-nav-item header-menu-nav-item--collection  header-menu-nav-item--homepage" id="home" onclick="setAriaCurrent('home')">
     <a
-      href="#home_section"
-      
-        aria-current="page"
-      
+      href="#home_section"  
     >
       <div class="header-menu-nav-item-content">
         HOME
@@ -1124,10 +1121,9 @@ Static.SQUARESPACE_CONTEXT = {"facebookAppId":"314192535267336","facebookApiVers
     </a>
   </div>
 
-  <div class="container header-menu-nav-item header-menu-nav-item--collection">
+  <div class="container header-menu-nav-item header-menu-nav-item--collection" id="about" onclick="setAriaCurrent('about')">
     <a
       href="#about_section"
-      
     >
       <div class="header-menu-nav-item-content">
         ABOUT
@@ -1135,7 +1131,7 @@ Static.SQUARESPACE_CONTEXT = {"facebookAppId":"314192535267336","facebookApiVers
     </a>
   </div>
 
-  <div class="container header-menu-nav-item header-menu-nav-item--collection">
+  <div class="container header-menu-nav-item header-menu-nav-item--collection" id="services" onclick="setAriaCurrent('services')">
     <a
       href="#designer_services"
       
@@ -1146,7 +1142,7 @@ Static.SQUARESPACE_CONTEXT = {"facebookAppId":"314192535267336","facebookApiVers
     </a>
   </div>
 
-  <!-- <div class="container header-menu-nav-item header-menu-nav-item--collection">
+  <!-- <div class="container header-menu-nav-item header-menu-nav-item--collection" >
     <a
       href="/gallery"
       
@@ -1179,7 +1175,7 @@ Static.SQUARESPACE_CONTEXT = {"facebookAppId":"314192535267336","facebookApiVers
     </a>
   </div> -->
 
-  <div class="container header-menu-nav-item header-menu-nav-item--collection">
+  <div class="container header-menu-nav-item header-menu-nav-item--collection"  id="contact" onclick="setAriaCurrent('contact')">
     <a
       href="#contact_section"
       
@@ -6093,6 +6089,15 @@ align-items: center; ">
           }
         }
         //# sourceURL=headerPositioning.js
+      function setAriaCurrent(itemId) {
+      // Reset aria-current for all list items
+      document.querySelectorAll('div').forEach(item => {
+        item.removeAttribute('aria-current');
+      });
+
+      // Set aria-current for the selected item
+      document.getElementById(itemId).setAttribute('aria-current', 'page');
+    }
       </script>
 
       
