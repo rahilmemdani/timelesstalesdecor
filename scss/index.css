@@ -1047,14 +1047,15 @@ h3 {
 
 
   /* Styles for laptop screens and larger */
+  @media screen and (min-width: 820px) {
+    #designer-services{
+      margin-left: 150px;
+    }
+  }
+
   @media screen and (min-width: 1024px) {
     #designer-services{
       margin-left: 250px;
     }
   }
 
-  @media screen and (min-width: 820px) {
-    #designer-services{
-      margin-left: 150px;
-    }
-  }
